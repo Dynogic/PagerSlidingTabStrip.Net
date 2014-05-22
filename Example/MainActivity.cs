@@ -422,7 +422,9 @@ namespace Example
 
 		private void ChangeColor(Color newColor)
 		{
-			_tabs.IndicatorColor = newColor;
+            _tabs.IndicatorColor = Color.White;
+            _tabs.TabColor = newColor;
+            _tabs.TextColor = Color.White;
 
 			// change ActionBar color just if an ActionBar is available
 			if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Honeycomb)
