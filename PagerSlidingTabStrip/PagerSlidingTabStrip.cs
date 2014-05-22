@@ -36,6 +36,7 @@ using Android.Views;
 using Android.Widget;
 using Java.Interop;
 using Java.Util;
+using Android.Graphics.Drawables;
 
 namespace PagerSlidingTabStrip
 {
@@ -128,7 +129,7 @@ namespace PagerSlidingTabStrip
 		private Typeface _tabTypeface = null;
 		private TypefaceStyle _tabTypefaceStyle = Typeface.DefaultBold.Style;
 		private int _lastScrollX = 0;
-		private int _tabBackgroundResId = Resource.Drawable.pagerslidingtabstrip_background_tab;
+        private Drawable _selectableItem;
 		private bool _shouldObserve = false;
 		private bool _inNotifyDataSetChanged;
 
@@ -446,21 +447,23 @@ namespace PagerSlidingTabStrip
 			}
 		}
 
-		/// <summary>
-		/// Gets or sets the tab background resource ID.
-		/// </summary>
-		public int TabBackground
-		{
-			get
-			{
-				return _tabBackgroundResId;
-			}
-			set
-			{
-				_tabBackgroundResId = value;
-				UpdateTabStyles();
-			}
-		}
+        private StateListDrawable BuildTabDrawable()
+        {
+            var stateList = new StateListDrawable();
+            stateList.AddState(new [] 
+            {
+                global::Android.Resource.Attribute.StatePressed,
+            }, _selectableItem);
+            stateList.AddState(new [] 
+            {
+                global::Android.Resource.Attribute.StateSelected,
+            }, _selectableItem);
+            stateList.AddState(new [] 
+            {
+                global::Android.Resource.Attribute.StateFocused,
+            }, _selectableItem);
+            return stateList;
+        }
 
 		/// <summary>
 		/// Gets or sets the padding either side of each tab.
@@ -577,12 +580,18 @@ namespace PagerSlidingTabStrip
 			_underlineHeight = a.GetDimensionPixelSize(Resource.Styleable.PagerSlidingTabStrip_underlineHeight, _underlineHeight);
 			_dividerPadding = a.GetDimensionPixelSize(Resource.Styleable.PagerSlidingTabStrip_dividerPadding, _dividerPadding);
 			_tabPadding = a.GetDimensionPixelSize(Resource.Styleable.PagerSlidingTabStrip_tabPaddingLeftRight, _tabPadding);
-			_tabBackgroundResId = a.GetResourceId(Resource.Styleable.PagerSlidingTabStrip_tabBackground, _tabBackgroundResId);
 			_shouldExpand = a.GetBoolean(Resource.Styleable.PagerSlidingTabStrip_shouldExpand, _shouldExpand);
 			_scrollOffset = a.GetDimensionPixelSize(Resource.Styleable.PagerSlidingTabStrip_scrollOffset, _scrollOffset);
 			_textAllCaps = a.GetBoolean(Resource.Styleable.PagerSlidingTabStrip_textAllCaps, _textAllCaps);
 
 			a.Recycle();
+
+            using (var b = 
+                Context.ObtainStyledAttributes(new [] { global::Android.Resource.Attribute.SelectableItemBackground }))
+            {
+                _selectableItem = b.GetDrawable(0);
+                b.Recycle();
+            }
 
 			_rectPaint = new Paint();
 			_rectPaint.AntiAlias = true;
@@ -903,13 +912,13 @@ namespace PagerSlidingTabStrip
 		}
 
 		private void UpdateTabStyles()
-		{
+        {
 			for (int i = 0; i < _tabCount; i++)
 			{
 				View v = _tabsContainer.GetChildAt(i);
 
 				v.LayoutParameters = _defaultTabLayoutParams;
-				v.SetBackgroundResource(_tabBackgroundResId);
+                v.SetBackgroundDrawable(BuildTabDrawable());
 				v.SetPadding(_tabPadding, 0, _tabPadding, 0);
 
 				FrameLayout vLayout = v as FrameLayout;
@@ -1000,7 +1009,7 @@ namespace PagerSlidingTabStrip
 		/// <param name="canvas">the canvas on which the background will be drawn</param>
 		protected override void OnDraw(Canvas canvas)
 		{
-			base.OnDraw(canvas);
+            base.OnDraw(canvas);
 
 			if (IsInEditMode || _tabCount == 0)
 			{
