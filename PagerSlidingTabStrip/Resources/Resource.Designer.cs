@@ -70,43 +70,11 @@ namespace PagerSlidingTabStrip
 			}
 		}
 		
-		public partial class Color
-		{
-			
-			// aapt resource value: 0x7f040000
-			public static int background_tab_pressed = 2130968576;
-			
-			static Color()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Color()
-			{
-			}
-		}
-		
-		public partial class Drawable
-		{
-			
-			// aapt resource value: 0x7f020000
-			public static int pagerslidingtabstrip_background_tab = 2130837504;
-			
-			static Drawable()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Drawable()
-			{
-			}
-		}
-		
 		public partial class Layout
 		{
 			
-			// aapt resource value: 0x7f030000
-			public static int pagerslidingtabstrip_texttab = 2130903040;
+			// aapt resource value: 0x7f020000
+			public static int pagerslidingtabstrip_texttab = 2130837504;
 			
 			static Layout()
 			{
@@ -121,11 +89,11 @@ namespace PagerSlidingTabStrip
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050001
-			public static int ApplicationName = 2131034113;
+			// aapt resource value: 0x7f030001
+			public static int ApplicationName = 2130903041;
 			
-			// aapt resource value: 0x7f050000
-			public static int Hello = 2131034112;
+			// aapt resource value: 0x7f030000
+			public static int Hello = 2130903040;
 			
 			static String()
 			{

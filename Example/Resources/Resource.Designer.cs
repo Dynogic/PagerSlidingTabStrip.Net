@@ -37,8 +37,6 @@ namespace Example
 			global::PagerSlidingTabStrip.Resource.Attribute.textAllCaps = global::Example.Resource.Attribute.textAllCaps;
 			global::PagerSlidingTabStrip.Resource.Attribute.underlineColor = global::Example.Resource.Attribute.underlineColor;
 			global::PagerSlidingTabStrip.Resource.Attribute.underlineHeight = global::Example.Resource.Attribute.underlineHeight;
-			global::PagerSlidingTabStrip.Resource.Color.background_tab_pressed = global::Example.Resource.Color.background_tab_pressed;
-			global::PagerSlidingTabStrip.Resource.Drawable.pagerslidingtabstrip_background_tab = global::Example.Resource.Drawable.pagerslidingtabstrip_background_tab;
 			global::PagerSlidingTabStrip.Resource.Layout.pagerslidingtabstrip_texttab = global::Example.Resource.Layout.pagerslidingtabstrip_texttab;
 			global::PagerSlidingTabStrip.Resource.String.ApplicationName = global::Example.Resource.String.ApplicationName;
 			global::PagerSlidingTabStrip.Resource.String.Hello = global::Example.Resource.String.Hello;
