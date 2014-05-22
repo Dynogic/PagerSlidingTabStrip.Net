@@ -43,7 +43,6 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
-    <Reference Include="Mono.Android.Support.v4" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -129,5 +128,11 @@
       <Version>19.1.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PagerSlidingTabStrip\PagerSlidingTabStrip.csproj">
+      <Project>{B90CF8BA-41F6-4493-A8B8-424928272C90}</Project>
+      <Name>PagerSlidingTabStrip</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
