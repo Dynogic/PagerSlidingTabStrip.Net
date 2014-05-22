@@ -115,6 +115,7 @@ namespace PagerSlidingTabStrip
 		private Color _indicatorColor = Color.Argb(0xFF, 0x66, 0x66, 0x66);
 		private Color _underlineColor = Color.Argb(0x1A, 0x00, 0x00, 0x00);
 		private Color _dividerColor = Color.Argb(0x1A, 0x00, 0x00, 0x00);
+        private Color? _tabColor;
 		private bool _shouldExpand = false;
 		private bool _textAllCaps = true;
 		private bool _globalLayoutSubscribed = false;
@@ -288,6 +289,26 @@ namespace PagerSlidingTabStrip
 				Invalidate();
 			}
 		}
+
+        public Color TabColor
+        {
+            get
+            {
+                if (this._tabColor.HasValue)
+                {
+                    return this._tabColor.Value;
+                }
+                else
+                {
+                    throw new ArgumentNullException("TabColor has never been set.");
+                }
+            }
+            set
+            {
+                this._tabColor = value;
+                Invalidate();
+            }
+        }
 
 		/// <summary>
 		/// Gets or sets the height of the underline drawn across the bottom of the tab strip, in DPs.
@@ -1016,6 +1037,11 @@ namespace PagerSlidingTabStrip
 				//Log(LogPriority.Info, "Exiting OnDraw early");
 				return;
 			}
+
+            if (_tabColor.HasValue)
+            {
+                canvas.DrawColor(_tabColor.Value);
+            }
 
 			int height = Height;
 
