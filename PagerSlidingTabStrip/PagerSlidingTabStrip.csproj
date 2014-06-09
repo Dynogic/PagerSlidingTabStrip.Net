@@ -43,8 +43,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
-    <Reference Include="Xamarin.Android.Support.v13">
-      <HintPath>..\Components\xamandroidsupportv13-18-19.1.0\lib\android\Xamarin.Android.Support.v13.dll</HintPath>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\Components\xamandroidsupportv4-18-19.1.0\lib\android\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +88,8 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <XamarinComponentReference Include="xamandroidsupportv13-18">
+    <XamarinComponentReference Include="xamandroidsupportv4-18">
+      <InstallationInProgress>True</InstallationInProgress>
       <Version>19.1.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
