@@ -599,11 +599,11 @@ namespace PagerSlidingTabStrip
 			_dividerColor = a.GetColor(Resource.Styleable.PagerSlidingTabStrip_dividerColor, _dividerColor);
 			_indicatorHeight = a.GetDimensionPixelSize(Resource.Styleable.PagerSlidingTabStrip_indicatorHeight, _indicatorHeight);
 			_underlineHeight = a.GetDimensionPixelSize(Resource.Styleable.PagerSlidingTabStrip_underlineHeight, _underlineHeight);
-			_dividerPadding = a.GetDimensionPixelSize(Resource.Styleable.PagerSlidingTabStrip_dividerPadding, _dividerPadding);
+            _dividerPadding = a.GetDimensionPixelSize(Resource.Styleable.PagerSlidingTabStrip_pagerDividerPadding, _dividerPadding);
 			_tabPadding = a.GetDimensionPixelSize(Resource.Styleable.PagerSlidingTabStrip_tabPaddingLeftRight, _tabPadding);
 			_shouldExpand = a.GetBoolean(Resource.Styleable.PagerSlidingTabStrip_shouldExpand, _shouldExpand);
 			_scrollOffset = a.GetDimensionPixelSize(Resource.Styleable.PagerSlidingTabStrip_scrollOffset, _scrollOffset);
-			_textAllCaps = a.GetBoolean(Resource.Styleable.PagerSlidingTabStrip_textAllCaps, _textAllCaps);
+			_textAllCaps = a.GetBoolean(Resource.Styleable.PagerSlidingTabStrip_pagerTextAllCaps, _textAllCaps);
 
 			a.Recycle();
 
