@@ -1,17 +1,34 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PagerSlidingTabStrip/PagerSlidingTabStrip.cs">
+﻿<Properties StartupItem="Example/Example.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PagerSlidingTabStrip/Resources/values/Attrs.xml">
     <Files>
-      <File FileName="PagerSlidingTabStrip/PagerSlidingTabStrip.cs" Line="133" Column="1" />
+      <File FileName="PagerSlidingTabStrip/PagerSlidingTabStrip.cs" Line="611" Column="116" />
       <File FileName="PagerSlidingTabStrip/Resources/values/Colors.xml" Line="1" Column="1" />
       <File FileName="PagerSlidingTabStrip/FragmentTabProviderPagerAdapterBase.cs" Line="1" Column="1" />
       <File FileName="Example/MainActivity.cs" Line="475" Column="13" />
       <File FileName="Example/SuperAwesomeCardFragment.cs" Line="1" Column="1" />
+      <File FileName="PagerSlidingTabStrip/Resources/values/Attrs.xml" Line="12" Column="50" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PagerSlidingTabStrip.Net" expanded="True">
+            <Node name="PagerSlidingTabStrip" expanded="True">
+              <Node name="Packages" expanded="True">
+                <Node name="Xamarin.Android.Support.v4" selected="True" />
+              </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="values" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Example AndroidDeviceId-Debug="050755adde14ea11" MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" />
+  <MonoDevelop.Ide.ItemProperties.Example PreferredExecutionTarget="Android.09343b3402983a0e" AndroidDeviceId-Debug="050755adde14ea11" MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" />
 </Properties>
